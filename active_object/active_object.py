@@ -42,6 +42,7 @@ class ActiveObject(threading.Thread):
         def _(*_, **__):
             raise StopActiveObject()
         self.tasks.put(_)
+        self.join()
 
     def eat(self):
         self.tasks.put(lambda *, creature: print(f'{creature} eating'))
