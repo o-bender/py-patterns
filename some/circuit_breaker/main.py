@@ -1,14 +1,8 @@
-from asyncio import Queue
 from datetime import timedelta
-from http.client import HTTPSConnection
-from circuit_breaker import CircuitBreaker, States
-from time import sleep
+from some.circuit_breaker import CircuitBreaker
 import asyncio
-from aiohttp import web, ClientSession, ClientTimeout
-from asyncio.exceptions import TimeoutError
-from datetime import datetime
+from aiohttp import ClientSession, ClientTimeout
 from random import random
-from collections import ChainMap
 
 
 async def get(endpoint, timeout):
